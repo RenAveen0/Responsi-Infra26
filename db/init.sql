@@ -7,7 +7,7 @@ CREATE TABLE students (
 
 INSERT INTO students (nim, nama)
 VALUES (
-    'REPLACE_NIM',
-    'REPLACE_NAME'
+    'H1H024017',
+    'Hana Nur Fathiyyah'
 );
 ```

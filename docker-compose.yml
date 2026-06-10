@@ -1,6 +1,6 @@
 version: "3.9"
 
-services
+services:
 
   nginx:
     build:
@@ -20,7 +20,7 @@ services
       context: ./web1
     container_name: web1
     environment:
-      DB_HOST: mysql
+      DB_HOST: db
       DB_NAME: responsi
       DB_USER: student
       DB_PASS: student123
@@ -38,7 +38,7 @@ services
       DB_HOST: db
       DB_NAME: responsi
       DB_USER: student
-      DB_PASS: wrongpassword
+      DB_PASS: student123
     depends_on:
       - db
     networks:
@@ -47,7 +47,7 @@ services
 
   web3:
     build:
-      context: ./web33
+      context: ./web3
     container_name: web3
     environment:
       DB_HOST: db
@@ -57,6 +57,7 @@ services
     depends_on:
       - db
     networks:
+      - frontend
       - backend
 
   db:
@@ -74,7 +75,7 @@ services
       - backend
 
 volumes:
-  database-data:
+  db-data:
 
 networks:
   frontend:
